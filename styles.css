@@ -1,0 +1,156 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: rgba(61, 139, 167, 0.323);
+  }
+
+.header {
+    display: flex;
+    padding-top: 15px;
+    letter-spacing: 1px;
+    font-size: 50px;
+    font-weight: 900;
+    align-items: center;
+    justify-content: center;
+    color: #FCC700;
+    display: grid;
+}
+
+
+#game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    background: #ffffff;
+}
+
+.grid-cell {
+    border: 1px solid #000;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+
+}
+
+.grid-cell:not(.disabled):hover {
+    background: rgba(143, 211, 236, 0.323);
+
+    
+}
+
+.grid-cell:nth-child(-n + 3) {
+    border-top: none;
+}
+
+.grid-cell:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.grid-cell:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.grid-cell:nth-last-of-type(-n + 3) {
+    border-bottom: none;
+}
+
+.disabled {
+    cursor: not-allowed;
+}
+
+.x::after {
+    content: '❌';
+}
+
+.o::after {
+    content: '⭕';
+}
+
+.game-over {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 9999px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 20px;
+
+}
+
+
+.game-over-text {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -200px;
+    font-size: 60px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.872);
+    font-family: 'Poppins', sans-serif;
+}
+
+.visible {
+    display: block;
+}
+
+
+
+.restart-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restart {
+    padding-top: 20px;
+    outline: none;
+    border: none;
+    width: 105px;
+    color: #ffffff;
+    padding: 8px 0;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #00c19a;
+    transition: transform 0.3s ease; 
+
+
+}
+
+
+@media (max-width: 550px) {
+    .grid-cell {
+        border: 1px solid #000;
+        width: 125px;
+        height: 125px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 60px;
+    }
+
+    .header {
+        padding-top: 80px;
+    }
+
+}
